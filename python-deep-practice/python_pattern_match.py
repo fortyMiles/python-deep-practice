@@ -23,3 +23,4 @@ def match_types(input_content):
 if __name__ == '__main__':
     print(match_types('hello'))
     print(match_types(10))
+    print(match_types(10.0))
