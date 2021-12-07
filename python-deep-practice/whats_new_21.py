@@ -6,7 +6,6 @@
 
 # Weak Reference Example
 
-import time
 import weakref
 
 
@@ -57,5 +56,22 @@ except AttributeError as e:
     print('error: ', e)
 
 
+# Function attributes
+
+def some_func(x):
+    some_func.name = 'hello'
+    some_func.age = 10
+    some_func.cache = {}
+
+    if x in some_func.cache:
+        return some_func.cache[x]
+    else:
+        value = x ** 2
+        some_func.cache[x] = value
+
+        return value
+
+
 if __name__ == '__main__':
-    pass
+    print(some_func(2))
+    print(some_func(2))
